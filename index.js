@@ -34,8 +34,8 @@ function restaurantMenu() {
     return dinerMenu
 }
 
-function foodCart() {
-    
+function restaurantCart() {
+
 }
 
 function render() {
