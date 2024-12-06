@@ -37,22 +37,35 @@
                 <h1>Total price:</h1>
                 <h2>$14</h2>
             </div>
+            <div class="complete-order" id="complete-order">
+                <button>Complete order</button>
+            </div>
         </div>
     </section>
     <section>
-        <div class="complete-order" id="complete-order">
-            <button>Complete order</button>
-        </div>
-    </section>
-    <section>
-        <div class="payment-modal" id="payment-modal">
+        <div class="payment-modal hidden" id="payment-modal">
             <h1>Enter card details</h1>
             <form>
                 <input type="text" placeholder="Enter your name" required>
-                <input type="number" placeholder="Enter card number" required>
-                <input type="number" placeholder="Enter CVV" required>
-                <input type="submit" placeholder="Pay">
+                <input type="number"
+                    oninput="javascript: if (this.value.length > this.maxLength) this.value = this.value.slice(0, this.maxLength);"
+                    maxlength="16"
+                    placeholder="Enter card number"
+                    required
+                    />
+                <input type="number"
+                    oninput="javascript: if (this.value.length > this.maxLength) this.value = this.value.slice(0, this.maxLength);"
+                    maxlength="3"
+                    placeholder="Enter CVV"
+                    required
+                    />
+                <input type="submit" value="Pay">
             </form>
+        </div>
+    </section>
+    <section>
+        <div class="thank-you" id="thank-you">
+            <h1>Thanks, James! Your order is on it's way!</h1>
         </div>
     </section>
 
