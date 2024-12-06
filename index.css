@@ -4,9 +4,19 @@
 }
 
 body {
+    font-family: "Smythe", sans-serif, system-ui;
     background-color: whitesmoke;
+    color: #393333;
     width: 90%;
     margin: 0 auto;
+}
+
+h1 {
+    font-size: 1.75rem;
+}
+
+h2 {
+    font-size: 1.25rem;
 }
 
 img.logo {
@@ -26,21 +36,63 @@ img.logo {
 }
 
 .menu-image {
-    font-size: 4em;
+    font-size: 5em;
 }
 
 .menu-details {
-    margin-left: .75em;
+    margin-left: 1.75em;
+    line-height: 1.75em;
+}
+
+.menu-details > p {
+    color: #8B8B8B;
 }
 
 .add-btn {
     margin: 0 0 0 auto;
+    cursor: pointer;
+    border-radius: 50%;
+    font-size: 1.75em;
+    border: 1px solid #DEDEDE;
+    background-color: whitesmoke;
+    padding: .25em .5em;
+    color: #393333;
+}
+
+.food-cart {
+    display: block;
+    width: 45%;
+    margin: 0 auto;
 }
 
 .food-cart > h1 {
-    font-size: 2em;
     text-align: center;
     padding: 1.5em 0;
+}
+
+span {
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    font-size: .75em;
+    color: #8B8B8B;
+    margin: 0 auto 0 0;
+    padding-left: 1em;
+}
+
+.cart-item {
+    padding-bottom: 2em;
+}
+
+.cart-item,
+.total-price {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.total-price {
+    border-top: 2px solid #393333;
+    padding-top: 2em;
 }
 
 /* header img {

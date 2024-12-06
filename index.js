@@ -19,14 +19,12 @@ function restaurantMenu() {
     menuArray.map(function(menu) {
         dinerMenu += `
             <div class="menu-list" id="menu-list">
-                <div class="menu-name">
                     <p class="menu-image">${menu.emoji}</p>
                     <div class="menu-details">
                         <h1>${menu.name}</h1>
                         <p>${menu.ingredients.join(', ')}</p>
                         <h2>$${menu.price}</h2>
                     </div>
-                </div>
                 <button class="add-btn" id="add-btn" data-addmenu="${menu.id}">+</button>
             </div>
         `

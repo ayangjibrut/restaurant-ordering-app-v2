@@ -3,6 +3,9 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Smythe&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="index.css">
     <title>Rizza's Diner</title>
 </head>
@@ -12,7 +15,7 @@
     </header>
     <article>
         <div class="feed" id="feed">
-            <div class="menu-list" id="menu-list">
+            <!-- <div class="menu-list" id="menu-list">
                     <p class="menu-image">🍕</p>
                     <div class="menu-details">
                         <h1>Pizza</h1>
@@ -20,18 +23,23 @@
                         <h2>$14</h2>
                     </div>
                 <button class="add-btn" id="add-btn" data-addmenu="${menu.id}">+</button>
-            </div>
+            </div> -->
         </div>
     </article>
     <section>
         <div class="food-cart" id="food-cart">
             <h1>Your Order</h1>
             <div class="cart-item" id="cart-item">
-                <h1>Pizza</h1>
+                <h1>Pizza</h1><span>remove</span>
+                <h2>$14</h2>
+            </div>
+            <div class="total-price" id="total-price">
+                <h1>Total price:</h1>
+                <h2>$14</h2>
             </div>
         </div>
     </section>
 
-    <!-- <script src="index.js" type="module"></script> -->
+    <script src="index.js" type="module"></script>
 </body>
 </html>
