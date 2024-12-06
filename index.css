@@ -5,9 +5,45 @@
 
 body {
     background-color: whitesmoke;
+    width: 90%;
+    margin: 0 auto;
 }
 
-header img {
+img.logo {
+    width: 50%;
+    display: block;
+    margin: 0 auto;
+}
+
+.menu-list {
+    width: 45%;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    padding: 1.5em 0;
+    border-bottom: 1px solid #DEDEDE;
+    margin: 0 auto;
+}
+
+.menu-image {
+    font-size: 4em;
+}
+
+.menu-details {
+    margin-left: .75em;
+}
+
+.add-btn {
+    margin: 0 0 0 auto;
+}
+
+.food-cart > h1 {
+    font-size: 2em;
+    text-align: center;
+    padding: 1.5em 0;
+}
+
+/* header img {
     width: 50%;
     display: block;
     margin: 0 auto;
@@ -68,4 +104,4 @@ p.menu-image {
     .add-btn {
         font-size: 1em;
     }
-}
+} */

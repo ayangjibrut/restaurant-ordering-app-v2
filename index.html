@@ -8,12 +8,30 @@
 </head>
 <body>
     <header>
-        <img src="./images/header.jpg">
+        <img src="./images/header.jpg" class="logo">
     </header>
     <article>
-        <div class="feed" id="feed"></div>
+        <div class="feed" id="feed">
+            <div class="menu-list" id="menu-list">
+                    <p class="menu-image">🍕</p>
+                    <div class="menu-details">
+                        <h1>Pizza</h1>
+                        <p>Pepperoni, Mushrom, Mozarella</p>
+                        <h2>$14</h2>
+                    </div>
+                <button class="add-btn" id="add-btn" data-addmenu="${menu.id}">+</button>
+            </div>
+        </div>
     </article>
+    <section>
+        <div class="food-cart" id="food-cart">
+            <h1>Your Order</h1>
+            <div class="cart-item" id="cart-item">
+                <h1>Pizza</h1>
+            </div>
+        </div>
+    </section>
 
-    <script src="index.js" type="module"></script>
+    <!-- <script src="index.js" type="module"></script> -->
 </body>
 </html>
