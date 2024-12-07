@@ -7,38 +7,28 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Smythe&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="index.css">
-    <title>Rizza's Diner</title>
+    <title>Restaurant Ordering App</title>
 </head>
 <body>
     <header>
         <img src="./images/header.jpg" class="logo">
     </header>
     <article>
-        <div class="feed" id="feed">
-            <!-- <div class="menu-list" id="menu-list">
-                    <p class="menu-image">🍕</p>
-                    <div class="menu-details">
-                        <h1>Pizza</h1>
-                        <p>Pepperoni, Mushrom, Mozarella</p>
-                        <h2>$14</h2>
-                    </div>
-                <button class="add-btn" id="add-btn" data-addmenu="${menu.id}">+</button>
-            </div> -->
-        </div>
+        <div class="menu" id="menu"></div>
     </article>
     <section>
-        <div class="food-cart" id="food-cart">
+        <div class="diner-cart" id="diner-cart">
             <h1>Your Order</h1>
-            <div class="cart-item" id="cart-item">
+            <!-- <div class="cart-item" id="cart-item">
                 <h1>Pizza</h1><span>remove</span>
                 <h2>$14</h2>
-            </div>
+            </div> -->
             <div class="total-price" id="total-price">
                 <h1>Total price:</h1>
                 <h2>$14</h2>
             </div>
             <div class="complete-order" id="complete-order">
-                <button>Complete order</button>
+                <button class="complete-order-btn" id="complete-order-btn">Complete order</button>
             </div>
         </div>
     </section>
@@ -46,25 +36,37 @@
         <div class="payment-modal hidden" id="payment-modal">
             <h1>Enter card details</h1>
             <form>
-                <input type="text" placeholder="Enter your name" required>
-                <input type="number"
+                <input
+                    type="text"
+                    name="name"
+                    placeholder="Enter your name"
+                    aria-label="Name"
+                    required
+                />
+                <input 
+                    type="number"
+                    name="card-number"
                     oninput="javascript: if (this.value.length > this.maxLength) this.value = this.value.slice(0, this.maxLength);"
                     maxlength="16"
                     placeholder="Enter card number"
+                    aria-label="Card number"
                     required
-                    />
-                <input type="number"
+                />
+                <input 
+                    type="number"
+                    name="cvv"
                     oninput="javascript: if (this.value.length > this.maxLength) this.value = this.value.slice(0, this.maxLength);"
                     maxlength="3"
                     placeholder="Enter CVV"
+                    aria-label="CVV number"
                     required
-                    />
+                />
                 <input type="submit" value="Pay">
             </form>
         </div>
     </section>
     <section>
-        <div class="thank-you" id="thank-you">
+        <div class="thank-you hidden" id="thank-you">
             <h1>Thanks, James! Your order is on it's way!</h1>
         </div>
     </section>

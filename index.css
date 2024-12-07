@@ -59,13 +59,13 @@ img.logo {
     color: #393333;
 }
 
-.food-cart {
+.diner-cart {
     display: block;
     width: 45%;
     margin: 0 auto;
 }
 
-.food-cart > h1 {
+.diner-cart > h1 {
     text-align: center;
     padding: 1.5em 0;
 }
