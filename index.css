@@ -100,7 +100,8 @@ span.remove-btn {
     text-align: center;
 }
 
-.complete-order > button {
+.complete-order-btn {
+    display: block;
     font-family: Verdana, Geneva, Tahoma, sans-serif;
     font-size: 1em;
     font-weight: bold;
@@ -175,6 +176,11 @@ input[type="submit"] {
     width: 45%;
     margin: 2em auto;
     border-radius: 4px;
+}
+
+.unclickable {
+    cursor: not-allowed;
+    background-color: #5c5c5c;
 }
 
 .hidden {
