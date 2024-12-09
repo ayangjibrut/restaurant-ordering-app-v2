@@ -100,6 +100,10 @@ span.remove-btn {
     text-align: center;
 }
 
+.complete-order:hover {
+    cursor: not-allowed;
+}
+
 .complete-order-btn {
     display: block;
     font-family: Verdana, Geneva, Tahoma, sans-serif;
@@ -200,10 +204,6 @@ input[type="submit"] {
 .unclickable {
     pointer-events: none;
     background-color: #5c5c5c;
-}
-
-.unclickable:hover {
-    cursor: not-allowed;
 }
 
 .hidden {
