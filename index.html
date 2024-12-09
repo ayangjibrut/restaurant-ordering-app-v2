@@ -35,39 +35,42 @@
     </section>
     <section>
         <div class="payment-modal" id="payment-modal">
-            <h1>Enter card details</h1>
-            <form>
+            <div class="payment-title" id="payment-title">
+                <h1>Enter card details</h1>
+                <button class="close-modal" id="close-modal">X</button>
+            </div>
+            <form id="payment-details">
                 <input
                     type="text"
                     name="name"
                     placeholder="Enter your name"
                     aria-label="Name"
-                    required
+                    
                 />
                 <input 
                     type="number"
                     name="card-number"
-                    oninput="javascript: if (this.value.length > this.maxLength) this.value = this.value.slice(0, this.maxLength);"
+                    oninput="javascript: if (this.value.length > this.maxLength) this.value = this.value.slice(0, this.maxLength)"
                     maxlength="16"
                     placeholder="Enter card number"
                     aria-label="Card number"
-                    required
+                    
                 />
                 <input 
                     type="number"
                     name="cvv"
-                    oninput="javascript: if (this.value.length > this.maxLength) this.value = this.value.slice(0, this.maxLength);"
+                    oninput="javascript: if (this.value.length > this.maxLength) this.value = this.value.slice(0, this.maxLength)"
                     maxlength="3"
                     placeholder="Enter CVV"
                     aria-label="CVV number"
-                    required
+                    
                 />
                 <input type="submit" value="Pay">
             </form>
         </div>
     </section>
     <section>
-        <div class="thank-you hidden" id="thank-you">
+        <div class="thank-you" id="thank-you">
             <h1>Thanks, James! Your order is on it's way!</h1>
         </div>
     </section>

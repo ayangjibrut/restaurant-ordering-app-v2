@@ -1,5 +1,7 @@
 import { menuArray } from './data.js'
 
+const menuDisplay = document.getElementById('menu')
+
 const renderMenu = (dinerMenu) => {
     return dinerMenu.map(({emoji, name, ingredients, price, id}) => `
         <div class="menu-list" id="menu-item-${id}">
@@ -14,12 +16,12 @@ const renderMenu = (dinerMenu) => {
     `).join('')
 }
 
-document.getElementById('menu').innerHTML = renderMenu(menuArray)
+menuDisplay.innerHTML = renderMenu(menuArray)
 
 let dinerCart = []
 
 if (dinerCart.length === 0) {
-    document.getElementById('complete-order-btn').classList.add('hidden')
+    document.getElementById('complete-order-btn').classList.add('unclickable')
 }
 
 const renderCart = (dinerCart) => {
@@ -39,10 +41,10 @@ const updateCartDisplay = () => {
 
     if (dinerCart.length === 0) {
         cartContentEl.classList.add('hidden')
-        completeOrderEl.classList.add('hidden')
+        completeOrderEl.classList.add('unclickable')
     } else {
         cartContentEl.classList.remove('hidden')
-        completeOrderEl.classList.remove('hidden')
+        completeOrderEl.classList.remove('unclickable')
     }
 
     cartContentEl.innerHTML = renderCart(dinerCart)
@@ -85,6 +87,9 @@ const handleRemoveBtn = (itemId) => {
 }
 
 document.addEventListener('click', (e) => {
+    const completeOrderBtn = document.getElementById('complete-order-btn')
+    const paymentModal = document.getElementById('payment-modal')
+
     if (e.target.dataset.addmenu) {
         handleAddBtn(e.target.dataset.addmenu)
     }
@@ -94,6 +99,28 @@ document.addEventListener('click', (e) => {
     }
 
     if (e.target === document.getElementById('complete-order-btn')) {
-        document.getElementById('payment-modal').style.display = 'block'
+        completeOrderBtn.classList.add('unclickable')
+        paymentModal.style.display = 'block'
+        menuDisplay.style.pointerEvents = 'none'
     }
+
+    if (e.target === document.getElementById('close-modal')) {
+        completeOrderBtn.classList.remove('unclickable')
+        paymentModal.style.display = 'none'
+        menuDisplay.style.pointerEvents = 'auto'
+    }
+})
+
+const paymentDetailsForm = document.getElementById('payment-details')
+
+paymentDetailsForm.addEventListener('submit', (e) => {
+    e.preventDefault()
+
+    document.getElementById('payment-modal').style.display = 'none'
+    document.getElementById('menu').style.pointerEvents = 'none'
+
+    dinerCart = []
+    document.getElementById('diner-cart').style.display = 'none'
+
+    document.getElementById('thank-you').style.display = 'block'
 })
