@@ -9,7 +9,7 @@ const renderMenu = (dinerMenu) => {
             <div class="menu-details">
                 <h1>${name}</h1>
                 <p>${ingredients.join(', ')}</p>
-                <h2>$${price}</h2>
+                <h2>$${(price + .59).toFixed(2)}</h2>
             </div>
             <button class="add-btn" data-addmenu="${id}">+</button>
         </div>
@@ -29,7 +29,7 @@ const renderCart = (dinerCart) => {
         <div class="cart-item" id="cart-item-${id}">
             <h1>${name}</h1>
             <span class="remove-btn" data-removemenu="${id}">Remove</span>
-            <h2>${count} x $${price} = $${(count * price).toFixed(2)}</h2>
+            <h2>${count} x $${(price + .59)} = $${(count * (price + .59)).toFixed(2)}</h2>
         </div>
     `).join('')
 }
@@ -49,7 +49,7 @@ const updateCartDisplay = () => {
 
     cartContentEl.innerHTML = renderCart(dinerCart)
 
-    const totalPrice = dinerCart.reduce((total, { price, count }) => total + price * count, 0)
+    const totalPrice = dinerCart.reduce((total, { price, count }) => total + (price + .59) * count, 0)
     totalPriceEl.textContent = `$${totalPrice.toFixed(2)}`
 }
 
