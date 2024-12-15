@@ -9,7 +9,7 @@ const renderMenu = (dinerMenu) => {
             <div class="menu-details">
                 <h1>${name}</h1>
                 <p>${ingredients.join(', ')}</p>
-                <h2>$${(price + .59).toFixed(2)}</h2>
+                <h2>$${(price + .59)}</h2>
             </div>
             <button class="add-btn" data-addmenu="${id}">+</button>
         </div>
@@ -34,9 +34,10 @@ const renderCart = (dinerCart) => {
     `).join('')
 }
 
+const totalPriceEl = document.getElementById('total-item-price')
+
 const updateCartDisplay = () => {
     const cartContentEl = document.getElementById('cart')
-    const totalPriceEl = document.getElementById('total-item-price')
     const completeOrderEl = document.getElementById('complete-order-btn')
 
     if (dinerCart.length === 0) {
@@ -49,7 +50,7 @@ const updateCartDisplay = () => {
 
     cartContentEl.innerHTML = renderCart(dinerCart)
 
-    const totalPrice = dinerCart.reduce((total, { price, count }) => total + (price + .59) * count, 0)
+    const totalPrice = dinerCart.reduce((total, { price, count }) => total + (price + .59).toFixed(2) * count, 0)
     totalPriceEl.textContent = `$${totalPrice.toFixed(2)}`
 }
 
@@ -125,9 +126,11 @@ orderFormDetails.addEventListener('submit', (e) => {
     const address = orderFormData.get('address')
 
     const thankYouMessage = document.getElementById('thank-you')
+    const totalPrice = dinerCart.reduce((total, { price, count }) => total + (price + .59).toFixed(2) * count, 0)
 
     thankYouMessage.innerHTML = `
-        <h1>Thanks, ${name} <br /> Your order is on it's way to ${address}.</h1>
+        <h1>Thanks, ${name}!<br /> Your order is on it's way to ${address}.</h1>
+        <h2 class="cash">Please make sure you have $${totalPrice.toFixed(2)} ready in cash.</h2>
         <p class="refresh-page">
             <a href="#" id="refresh-page">Click here to make a new order.</a>
         </p>

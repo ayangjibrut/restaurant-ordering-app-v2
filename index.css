@@ -216,6 +216,10 @@ input[type="submit"] {
     border-radius: 4px;
 }
 
+.cash {
+    padding-top: 1em;
+}
+
 .refresh-page {
     margin-top: 2em;
     font-size: .85em;
