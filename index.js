@@ -111,16 +111,32 @@ document.addEventListener('click', (e) => {
     }
 })
 
-const paymentDetailsForm = document.getElementById('payment-details')
+const orderFormDetails = document.getElementById('payment-details')
 
-paymentDetailsForm.addEventListener('submit', (e) => {
+orderFormDetails.addEventListener('submit', (e) => {
     e.preventDefault()
 
-    document.getElementById('payment-modal').style.display = 'none'
+    orderFormDetails.style.display = 'none'
+    document.getElementById('payment-title').style.display = 'none'
     document.getElementById('menu').style.pointerEvents = 'none'
 
-    dinerCart = []
-    document.getElementById('diner-cart').style.display = 'none'
+    const orderFormData = new FormData(orderFormDetails)
+    const name = orderFormData.get('name')
+    const address = orderFormData.get('address')
 
-    document.getElementById('thank-you').style.display = 'block'
+    const thankYouMessage = document.getElementById('thank-you')
+
+    thankYouMessage.innerHTML = `
+        <h1>Thanks, ${name} <br /> Your order is on it's way to ${address}.</h1>
+        <p class="refresh-page">
+            <a href="#" id="refresh-page">Click here to make a new order.</a>
+        </p>
+    `
+
+    thankYouMessage.style.display = 'block'
+
+    document.getElementById('refresh-page').addEventListener('click', (e) => {
+        e.preventDefault()
+        location.reload()
+    })
 })
