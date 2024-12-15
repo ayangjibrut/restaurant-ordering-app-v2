@@ -129,7 +129,9 @@ orderFormDetails.addEventListener('submit', (e) => {
     const totalPrice = dinerCart.reduce((total, { price, count }) => total + (price + .59).toFixed(2) * count, 0)
 
     thankYouMessage.innerHTML = `
-        <h1>Thanks, ${name}!<br /> Your order is on it's way to ${address}.</h1>
+        <h1>Thanks, ${name}!</h1>
+        <br />
+        <h1>Your order is on it's way to ${address}.</h1>
         <h2 class="cash">Please make sure you have $${totalPrice.toFixed(2)} ready in cash.</h2>
         <p class="refresh-page">
             <a href="#" id="refresh-page">Click here to make a new order.</a>

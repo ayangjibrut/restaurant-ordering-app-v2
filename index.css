@@ -3,13 +3,12 @@
     margin: 0;
 }
 
-body {
+html, body {
     font-family: "Smythe", sans-serif, system-ui;
     background-color: whitesmoke;
     color: #393333;
     width: 90%;
     margin: 0 auto;
-    height: 100vh;
 }
 
 .shadow-container {
@@ -232,4 +231,33 @@ input[type="submit"] {
 
 .hidden {
     display: none;
+}
+
+@media (max-width: 576px) {
+    body {
+        width: 100%;
+    }
+
+    .shadow-container {
+        width: 100%;
+        box-shadow: none;
+    }
+
+    .payment-modal {
+        width: 95%;
+    }
+}
+
+@media (max-width: 1024px) {
+    body {
+        width: 80%;
+    }
+
+    .shadow-container {
+        width: 100%;
+    }
+
+    .payment-modal {
+        width: 50%;
+    }
 }
