@@ -11,7 +11,10 @@ const renderMenu = (dinerMenu) => {
                 <p>${ingredients.join(', ')}</p>
                 <h2>$${(price + .59)}</h2>
             </div>
-            <button class="add-btn" data-addmenu="${id}">+</button>
+            <div class="addbtn-notification">
+                <p class="add-notification" id="add-notification-${id}" data-addmenu="${id}">Added to cart</p>
+                <button class="add-btn" id="btn-notification-${id}" data-addmenu="${id}">+</button>
+            </div>
         </div>
     `).join('')
 }
@@ -34,11 +37,10 @@ const renderCart = (dinerCart) => {
     `).join('')
 }
 
-const totalPriceEl = document.getElementById('total-item-price')
-
 const updateCartDisplay = () => {
     const cartContentEl = document.getElementById('cart')
     const completeOrderEl = document.getElementById('complete-order-btn')
+    const totalPriceEl = document.getElementById('total-item-price')
 
     if (dinerCart.length === 0) {
         cartContentEl.classList.add('hidden')
@@ -66,6 +68,26 @@ const handleAddBtn = (itemId) => {
         dinerCart.push({ ...targetMenuObj, count: 1 })
     }
 
+    const notification = document.getElementById(`add-notification-${itemId}`)
+    if (notification) {
+        notification.style.visibility = 'visible'
+        
+        setTimeout(() => {
+            notification.style.visibility = 'hidden'
+        }, 750)
+    }
+
+    const btnNotification = document.getElementById(`btn-notification-${itemId}`)
+    if (btnNotification) {
+        btnNotification.textContent = "✓"
+        btnNotification.classList.add('btn-notification')
+        
+        setTimeout(() => {
+            btnNotification.textContent = "+"
+            btnNotification.classList.remove('btn-notification')
+        }, 750)
+    }
+    
     updateCartDisplay()
 }
 

@@ -65,8 +65,26 @@ img.logo {
     color: #8B8B8B;
 }
 
-.add-btn {
+.addbtn-notification {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
     margin: 0 0 0 auto;
+}
+
+.add-notification {
+    visibility: hidden;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    font-size: .65em;
+    width: 50px;
+    margin-right: .5em;
+    border: 1px solid #DEDEDE;
+    padding: .5em;
+    text-align: center;
+    border-radius: 4px;
+}
+
+.add-btn {
     cursor: pointer;
     border-radius: 50%;
     font-size: 1.75em;
@@ -74,6 +92,11 @@ img.logo {
     background-color: whitesmoke;
     padding: .25em .5em;
     color: #393333;
+}
+
+.btn-notification {
+    font-size: 1.55em;
+    color: #16DB99;
 }
 
 .diner-cart {
@@ -292,6 +315,11 @@ input[type="submit"] {
     
     .menu-list {
         padding: 1em 0;
+    }
+
+    .menu-details {
+        margin-left: .75em;
+        line-height: 1.5em;
     }
 
     .payment-modal {
